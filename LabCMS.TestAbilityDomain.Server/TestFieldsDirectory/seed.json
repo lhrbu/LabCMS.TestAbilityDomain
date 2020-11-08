@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Environment",
+    "TestAbilities": [
+      {
+        "Key": "123456",
+        "Label": "Test1"
+      },
+      {
+        "Key": "789",
+        "Label": "Test2"
+      }
+
+    ]
+  }
+]

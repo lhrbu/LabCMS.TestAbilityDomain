@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="seed.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="seed.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LabCMS.TestAbilityDomain.Shared\LabCMS.TestAbilityDomain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
