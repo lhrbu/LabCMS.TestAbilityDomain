@@ -1,0 +1,78 @@
+﻿<Window x:Class="LabCMS.TestAbilityDomain.ImportHelper.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabCMS.TestAbilityDomain.ImportHelper.WpfClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <materialDesign:Card Padding="16" Margin="16 32 16 16" Grid.Row="0">
+            <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition  Width="3*"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Import Excel File:" Grid.Column="0" Margin="16 0 0 0"
+                   Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                       VerticalAlignment="Center"/>
+             <Border BorderBrush="BlueViolet" BorderThickness="0.5" Grid.Column="1">
+                    <TextBox Text="{Binding ImportXlsx}"   VerticalAlignment="Center"
+                             Style="{DynamicResource MaterialDesignComboBoxEditableTextBox}"/>
+             </Border>
+             <Button Content="Browser" Grid.Column="2" Width="100" 
+                    x:Name="Button_ImportXlsx" Click="Button_ImportXlsx_Click"
+                    />
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="16" Margin="16" Grid.Row="1">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition  Width="3*"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Output Json File:" Grid.Column="0" Margin="16 0 0 0"
+                   Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                       VerticalAlignment="Center"/>
+                <Border BorderBrush="BlueViolet" BorderThickness="0.5" Grid.Column="1">
+                    <TextBox Text="{Binding OutputJson}"   VerticalAlignment="Center"
+                             Style="{DynamicResource MaterialDesignComboBoxEditableTextBox}"/>
+                </Border>
+                <Button Content="Browser" Grid.Column="2" Width="100" 
+                    x:Name="Button_OutputJson" Click="Button_OutputJson_Click"
+                    />
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Margin="16" Grid.Row="2">
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Parse"   IsEnabled="{Binding NotInParsing}"
+                    Command="{Binding ParseCommand}" FontSize="16" Height="40" Padding="24 0"
+                    Style="{DynamicResource MaterialDesignRaisedButton}"
+                    Background="Green"/>
+            <Button Content="Reset"  Margin="16 0" IsEnabled="{Binding NotInParsing}"
+                    Command="{Binding ResetCommand}" FontSize="16" Height="40" Padding="24 0"
+                    Style="{DynamicResource MaterialDesignRaisedButton}"
+                    Background="Red"/>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>
