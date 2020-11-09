@@ -34,7 +34,8 @@ namespace LabCMS.TestAbilityDomain.ImportHelper.WpfClient
             OpenFileDialog openFileDialog = new();
             openFileDialog.InitialDirectory = Environment.CurrentDirectory;
             openFileDialog.ShowDialog();
-            _mainWindowVM.ImportXlsx = openFileDialog.FileName;
+            if (!string.IsNullOrEmpty(openFileDialog.FileName))
+            { _mainWindowVM.ImportXlsx = openFileDialog.FileName;}
         }
 
         private void Button_OutputJson_Click(object sender, RoutedEventArgs e)
@@ -42,7 +43,8 @@ namespace LabCMS.TestAbilityDomain.ImportHelper.WpfClient
             SaveFileDialog saveFileDialog = new();
             saveFileDialog.InitialDirectory = Environment.CurrentDirectory;
             saveFileDialog.ShowDialog();
-            _mainWindowVM.OutputJson = saveFileDialog.FileName;
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName))
+            { _mainWindowVM.OutputJson = saveFileDialog.FileName;}
         }
     }
 }
