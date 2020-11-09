@@ -59,7 +59,7 @@ namespace LabCMS.TestAbilityDomain.ImportHelper
                     Label = group.Key
                     };
                 var subRows = group.Where(row=>row.Count()>1).Select(row=>row.Skip(1).ToArray()).ToArray();
-                if(subRows.Count()>1){
+                if(subRows.Count()>0){
                     testAbility.Children = CreateTestAbilityNode(subRows);
                 }
                 result.Add(testAbility);
